@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   bottom: 190,
                   child: Center(
                     child: Marquee(
-                      text: 'Some sample text that takes some space.',
+                      text: 'New scheme add to chitty,enjoy investment!',
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
