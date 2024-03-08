@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:marquee/marquee.dart';
+
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:smart_journal/screens/home_screen/icon_button.dart';
+import 'package:text_scroll/text_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,17 +38,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     radius: 22,
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   top: 0,
                   left: 0,
                   right: 0,
                   bottom: 190,
                   child: Center(
-                    child: Marquee(
-                      text: 'New scheme add to chitty,enjoy investment!',
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                      child: Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Updates:',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w700),),
+                            
+                            TextScroll(
+                              fadeBorderSide: FadeBorderSide.both,
+                                                'New Chitty Scheme is start on \'january\' ,Start saving Money!!  ',
+                                                mode: TextScrollMode.endless,
+                                                velocity: Velocity(pixelsPerSecond: Offset(70, 0)),
+                                                delayBefore: Duration(milliseconds: 100),
+                                                numberOfReps: 100,
+                                                pauseBetween: Duration(seconds: 1),
+                                                style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w700),
+                                                textAlign: TextAlign.right,
+                                                selectable: true,
+                                              ),
+                          ],
+                        ),
+                      )), 
                 ),
                 Positioned(
                   top: 220,
@@ -115,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     color: Color.fromRGBO(29, 27, 32, 1)),
-                              ))
+                              )),
                         ],
                       ),
                       //
